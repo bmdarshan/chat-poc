@@ -1,0 +1,25 @@
+<div>
+  <div id="message-container">
+    <div
+      class="chat-messsages-wrapper"
+      *ngIf="chatHistory && chatHistory.length"
+    >
+      <div class="chat-message-unit" *ngFor="let chat of chatHistory">
+        <span class="person-name"> {{ chat.createdBy }} : </span>
+        <span [ngClass]="chat.className">{{ chat.msg }}</span>
+      </div>
+    </div>
+  </div>
+  <form id="send-container">
+    <input
+      type="text"
+      id="message-input"
+      name="chat"
+      placeholder="Message in"
+      [(ngModel)]="chat"
+    />
+    <button type="submit" id="send-button" (click)="send()">
+      Send
+    </button>
+  </form>
+</div>

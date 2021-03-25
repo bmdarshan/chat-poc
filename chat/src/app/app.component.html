@@ -1,0 +1,13 @@
+<div>
+  <app-create-room (eventEmitter)="createRoom($event)"></app-create-room>
+  <app-rooms
+    [userInfo]="userInfo"
+    (eventEmitter)="selectRoom($event)"
+  ></app-rooms>
+  <app-chat-room
+    [roomId]="roomId"
+    [userInfo]="userInfo"
+    [receivedMessage]="receivedMessage"
+    (eventEmitter)="sendMessage($event)"
+  ></app-chat-room>
+</div>

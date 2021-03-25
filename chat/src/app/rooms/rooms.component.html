@@ -1,0 +1,6 @@
+<div>
+  Rooms
+  <ul>
+    <li *ngFor="let item of roomList" (click)="selectRoom(item._id)">{{ item.roomName }}</li>
+  </ul>  
+</div>
